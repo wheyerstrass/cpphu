@@ -2,6 +2,7 @@
 #define SGFX_WINDOW_H
 
 #include <sgfx/color.hpp>
+#include <sgfx/primitive_types.hpp>
 #include <sgfx/key.hpp>
 
 #include <GL/glew.h>
@@ -38,6 +39,8 @@ namespace sgfx
 		std::uint16_t height() const { return height_; }
 		
 		auto pixels() { return pixels_.data(); }
+
+    std::uint16_t pointToPixelIndex(point p);
 		
 		private:
 		GLFWwindow* wnd_;

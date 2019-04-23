@@ -17,6 +17,8 @@ namespace sgfx
 	
 	struct dimension
 	{
+    std::uint16_t x;
+    std::uint16_t y;
 	};
 	
 	struct rectangle

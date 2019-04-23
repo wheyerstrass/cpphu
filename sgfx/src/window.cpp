@@ -1,5 +1,6 @@
 #include <sgfx/window.hpp>
 
+#include <cmath>
 #include <stdexcept>
 
 namespace
@@ -186,4 +187,24 @@ void window::show() const
 	glDrawArrays(GL_TRIANGLES, 0, 6);
 
 	glfwSwapBuffers(wnd_);
+}
+
+/*
+ * Transform sgfx::point coordinates from
+ * [0, win_width-1] x [0, win_height-1]
+ * to
+ * array index for sgfx::window::pixels
+ * ( throws custom Out-Of-Bounds-Error )
+ */
+std::uint16_t window::pointToPixelIndex(point p)
+{
+  p.x = std::fmax(p.x, 0);
+  p.y = std::fmax(p.y, 0);
+
+  p.x = std::fmin(p.x, width_);
+  p.y = std::fmin(p.y, height_);
+
+  //
+  // TODO: fix overflow 
+  return (p.x + p.y*width_);
 }
