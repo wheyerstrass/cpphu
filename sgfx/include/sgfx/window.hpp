@@ -40,8 +40,6 @@ namespace sgfx
 		
 		auto pixels() { return pixels_.data(); }
 
-    std::uint16_t pointToPixelIndex(point p);
-		
 		private:
 		GLFWwindow* wnd_;
 		GLuint texture_id_;

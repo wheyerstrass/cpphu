@@ -12,17 +12,17 @@ int main(int argc, char* argv[])
 	
 	window main_window{256,256};
 	
-	//plot(main_window,{10,10},color::red);
-	//plot(main_window,{10,110},color::green);
-	//plot(main_window,{110,10},color::blue);
-	//plot(main_window,{110,110},color::yellow);
-	
-	//main_window.show();
-	//std::this_thread::sleep_for(2s);
-
 	clear(main_window,color::black);
 	main_window.show();
-	
+
+	std::this_thread::sleep_for(1s);
+
+	plot(main_window,{10,10},color::white);
+	plot(main_window,{10,110},color::white);
+	plot(main_window,{110,10},color::white);
+	plot(main_window,{110,110},color::white);
+	main_window.show();
+
 	std::this_thread::sleep_for(1s);
 	
 	hline(main_window,{20,127},256, color::white);
@@ -33,18 +33,18 @@ int main(int argc, char* argv[])
 	vline(main_window,{127,127},256, color::white);
 	main_window.show();
 	
-	std::this_thread::sleep_for(2s);
+	std::this_thread::sleep_for(1s);
 	
-	fill(main_window,{{127,127},{32,32}}, color::white);
+	fill(main_window,{{127,127},{64,64}}, color::green);
 	main_window.show();
 	
-	std::this_thread::sleep_for(2s);
+	std::this_thread::sleep_for(1s);
 	
-	//line(main_window,{0,10},{127,127}, color::green);
-	//line(main_window,{127,127},{246,0},color::blue);
-	//main_window.show();
+	line(main_window,{0,10},{127,127}, color::white);
+	line(main_window,{127,127},{246,0},color::white);
+	main_window.show();
 	
-	std::this_thread::sleep_for(2s);
+	std::this_thread::sleep_for(1s);
 
 	return 0;
 }
