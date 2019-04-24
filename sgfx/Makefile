@@ -1,5 +1,5 @@
 TARGET			=	lib/libsgfx.a
-CXXFLAGS		=	`pkg-config --cflags glfw3` -std=c++17 -Wall -pedantic -Werror -O3
+CXXFLAGS		=	`pkg-config --cflags glfw3` -std=c++17 -Wall -pedantic -Werror -O3 -fdiagnostics-color
 INCLUDE_PATH	=	-Iinclude
 
 SRCS			=	src/*.cpp

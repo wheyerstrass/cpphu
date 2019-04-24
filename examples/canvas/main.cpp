@@ -18,7 +18,8 @@ int main(int argc, char* argv[])
 	auto img1=img0;
 	std::fill_n(img1.pixels()+img1.width()*img1.height()/2, img1.width()*img1.height()/2, color::magenta);
 	
-	point pos0{0,0}, pos1{main_window.width()-img1.width(),0};
+	point pos0{0,0},
+        pos1{std::uint16_t(main_window.width()-img1.width()),0};
 	int dx0=4, dx1=-4;
 	while(pos0.y<main_window.height())
 	{

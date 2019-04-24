@@ -121,9 +121,6 @@ window::window(std::uint16_t w, std::uint16_t h, const char* title):
 {
 	init();
 	
-  // set by alex
-  glfwWindowHint(GLFW_FLOATING, GLFW_TRUE);
-
 	wnd_=glfwCreateWindow(width_, height_, title, nullptr, nullptr);
 	if(!wnd_)
 		throw std::runtime_error("Failed to create window");
