@@ -1,10 +1,10 @@
-TARGET			=	canvas_primitives_test
+TARGET			=	main
 CXXFLAGS		=	`pkg-config --cflags glfw3` -std=c++17 -Wall -pedantic -Werror -O3 -fdiagnostics-color
-INCLUDE_PATH	=	-I../../sgfx/include
-LIB_PATH		=	-L../../sgfx/lib
+INCLUDE_PATH	=	-I../sgfx/include
+LIB_PATH		=	-L../sgfx/lib
 LIBS			=	-lsgfx `pkg-config --static --libs glfw3` -lGL -lGLEW
 
-SRCS			=	*.cpp
+SRCS			=	src/*.cpp
 OBJS			=	$(patsubst %.cpp,%.o,$(wildcard $(SRCS)))
 
 
