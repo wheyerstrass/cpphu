@@ -3,13 +3,12 @@
 
 #include <cmath>
 #include <cstdint>
+#include <ostream>
 
 namespace sgfx
 {
-  struct vec
-  {
-  };
-
+  //
+  //
   struct point
   {
     std::uint16_t x;

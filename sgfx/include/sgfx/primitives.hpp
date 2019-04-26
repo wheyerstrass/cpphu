@@ -2,7 +2,6 @@
 #define SGFX_PRIMITIVES_H
 
 #include <sgfx/primitive_types.hpp>
-#include <sgfx/window.hpp>
 
 #include <cmath>
 #include <cstdint>

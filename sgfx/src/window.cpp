@@ -1,6 +1,5 @@
 #include <sgfx/window.hpp>
 
-#include <cmath>
 #include <stdexcept>
 
 namespace
