@@ -64,6 +64,20 @@ int main(int argc, char* argv[])
       }
   }
 
+  bool pause {true};
+  auto resetGame = [&]() {
+    left_player_pos.x = 50;
+    left_player_pos.y = 384-100;
+
+    right_player_pos.x = 1024-50-20;
+    right_player_pos.y = 384-100;
+
+    ball_pos.x = ww/2.f;
+    ball_pos.y = wh/2.f;
+
+    pause = true;
+  };
+
   auto renderFrame = [&]() {
     clear(win, bg_color);
     draw(win, left_player, vecToPoint(left_player_pos));
@@ -80,7 +94,6 @@ int main(int argc, char* argv[])
   //
   // enter loop and read input events
   auto br = ball_rad;
-  bool pause { true };
   while(win.handle_events() && !win.is_pressed(sgfx::key::escape))
 	{
     //
@@ -110,7 +123,7 @@ int main(int argc, char* argv[])
 
     // with left/right wall
     if (ball_pos.x-br <= 0 || ball_pos.x+br >= win.width())
-      ball_dir = reflect(ball_dir, {1,0});
+      resetGame();
 
     // with top/bottom wall
     if (ball_pos.y-br <= 0 || ball_pos.y+br >= win.height())
