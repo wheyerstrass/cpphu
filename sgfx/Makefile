@@ -15,6 +15,6 @@ src/%.o: src/%.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDE_PATH) -c $< -o $@
 
 clean:
-	rm $(TARGET) $(OBJS)
+	rm $(TARGET) $(OBJS) || true
 
 .PHONY: clean

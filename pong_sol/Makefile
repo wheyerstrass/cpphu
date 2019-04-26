@@ -1,5 +1,5 @@
 TARGET			=	main
-CXXFLAGS		=	`pkg-config --cflags glfw3` -std=c++17 -Wall -pedantic -O3 -fdiagnostics-color
+CXXFLAGS		=	`pkg-config --cflags glfw3` -std=c++17 -Wall -pedantic -O3 -fdiagnostics-color -Werror
 INCLUDE_PATH	=	-I../sgfx/include
 LIB_PATH		=	-L../sgfx/lib
 LIBS			=	-lsgfx `pkg-config --static --libs glfw3` -lGL -lGLEW
@@ -18,6 +18,6 @@ $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) $(INCLUDE_PATH) -c $< -o $@
 
 clean:
-	rm $(TARGET) $(OBJS)
+	rm $(TARGET) $(OBJS) && true
 
 .PHONY: shared clean test

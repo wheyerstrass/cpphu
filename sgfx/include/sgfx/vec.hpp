@@ -1,6 +1,8 @@
 #ifndef VEC_H
 #define VEC_H
 
+#include <sgfx/primitive_types.hpp>
+
 #include <cmath>
 #include <cstdint>
 #include <ostream>
@@ -36,6 +38,7 @@ struct vec
 vec scale(const float_t& s, const vec& v);
 float_t dot(const vec& v1, const vec& v2);
 vec reflect(const vec& v, const vec& n);
+sgfx::point vecToPoint(const vec& v);
 std::ostream& operator << (std::ostream& os, const vec& v);
 
 #endif

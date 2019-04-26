@@ -17,6 +17,9 @@ void sgfx::draw(window& target, const canvas& img, point top_left)
   for (auto x=0; x<cw*ch; x++) {
     point p { std::uint16_t(tlx+(x%cw)), std::uint16_t(tly+(x/cw)) };
     const auto idx { p.toIdx(ww, wh) };
-    target.pixels()[idx] = img.pixels()[x];
+    const auto col = img.pixels()[x];
+    if (col == color::lucent)
+      continue;
+    target.pixels()[idx] = col;
   }
 }

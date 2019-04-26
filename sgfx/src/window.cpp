@@ -125,6 +125,7 @@ window::window(std::uint16_t w, std::uint16_t h, const char* title):
 		throw std::runtime_error("Failed to create window");
 		
 	glfwMakeContextCurrent(wnd_);
+  //glfwSetInputMode(wnd_, GLFW_STICKY_KEYS, GLFW_TRUE);
 
 	glViewport(0,0,width_,height_);
 	glfwSetFramebufferSizeCallback(wnd_,[](GLFWwindow* wnd, int width, int height)

@@ -25,6 +25,13 @@ namespace color
 		constexpr const auto& red() const { return values_[0]; }
 		constexpr const auto& green() const { return values_[1]; }
 		constexpr const auto& blue() const { return values_[2]; }
+
+    bool operator == (const rgb_color& c) const
+    {
+      return this->red() == c.red() &&
+        this->green() == c.green() &&
+        this->blue() == c.blue();
+    }
 		
 		private:
 		std::uint8_t values_[3];
@@ -39,6 +46,7 @@ namespace color
 	inline constexpr const rgb_color gray{127,127,127};
 	inline constexpr const rgb_color cyan{0,255,255};
 	inline constexpr const rgb_color magenta{255,0,255};
+	inline constexpr const rgb_color lucent{1,2,3};
 	
 }}
 
